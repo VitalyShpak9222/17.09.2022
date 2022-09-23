@@ -6,20 +6,29 @@ using System.Threading.Tasks;
 
 namespace TEST_app
 {
+
+    public enum AccountType
+    {
+        Main,
+        Deposit,
+        Credit
+    }
+
+    public struct Account
+    {
+        public Guid Id { get; set; }
+        public long Number { get; set; }
+        public AccountType Type { get; set; }
+        public decimal Total { get; set; }
+    }
     class Program
     {
-   
+
         static void Main(string[] args)
         {
-            string str = Console.ReadLine();
-            for (int i = 0; i < str.Length ; i++)
-            {
-                if (Convert.ToInt16(str[i]) <= 90)
-                {
-                    str[i] = str[i].Replace(str[i], Convert.ToChar(Convert.ToInt16(str[i]) + 32));
-                }
-            }
-            Console.WriteLine(Convert.ToInt16(n));
+            Account test = new Account() { Id = Guid.NewGuid(), Number = 49751234095, Type = AccountType.Deposit, Total = 2412 };
+
+            Console.WriteLine($"Id - {test.Id};\nNumber - {test.Number};\nType - {test.Type};\nTotal - {test.Total};");
             Console.ReadKey();
         }
     }

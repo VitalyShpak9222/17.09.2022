@@ -200,6 +200,25 @@ namespace KW_at_17_09_2022
                 Console.WriteLine("Для перехода к следующему решению нажмите enter");
                 Console.ReadKey();
                 Console.Clear();
+
+                Console.WriteLine("Задание 7\r\nПрограмма изменяет регистр всех букв латинского алфавита на противоположный");
+                Console.WriteLine("Напишите что-нибудь");
+                string str = Console.ReadLine();
+                string str2 = "";
+                for (int i = 0; i < str.Length; i++)
+                {
+                    if (Convert.ToInt16(str[i]) <= 90)
+                    {
+                        str2 += Convert.ToChar(Convert.ToInt16(str[i]) + 32);
+                    }
+                    else
+                    {
+                        str2 += Convert.ToChar(Convert.ToInt16(str[i]) - 32);
+                    }
+                }
+                Console.WriteLine(str2);
+                Console.WriteLine("Для заветшения нажмите enter");
+                Console.ReadKey();
             }
         }
     }
